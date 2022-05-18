@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/meghna/Documents/Project/CoreDataLogin/CoreDataLogin/User+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/meghna/Documents/Project/CoreDataLogin/CoreDataLogin/User+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/meghna/Documents/Project/CoreDataLogin/CoreDataLogin/Profile+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/meghna/Documents/Project/CoreDataLogin/CoreDataLogin/Profile+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CoreDataLogin.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,0 +1,6 @@
+framework module Pods_CoreDataLogin_CoreDataLoginUITests {
+  umbrella header "Pods-CoreDataLogin-CoreDataLoginUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
