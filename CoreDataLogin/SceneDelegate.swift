@@ -10,13 +10,49 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    var user = [User]()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        user = DatabaseHelper.shareInstance.getUserData()
+        let keyexists = user.count
+        for i in 0..<(keyexists) {
+            print(i)
+            let val = user[i].islogin
+            print(val)
+            if val == "true"{
+                print("Login")
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeVC")
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+                break;
+            }else {
+                print("Not login")
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "RegistationVC")
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+            }
+            
+        }
+//        let islogin = UserDefaults.standard.object(forKey: "emailid")
+//        if (islogin != nil) {
+//            print("Login")
+//
+//           // self.window = UIWindow(frame: UIScreen.main.bounds)
+//               let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeVC")
+//               self.window?.rootViewController = initialViewController
+//               self.window?.makeKeyAndVisible()
+//        }else{
+//            print("not login")
+//            //self.window = UIWindow(frame: UIScreen.main.bounds)
+//               let initialViewController = storyboard.instantiateViewController(withIdentifier: "RegistationVC")
+//               self.window?.rootViewController = initialViewController
+//               self.window?.makeKeyAndVisible()
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
